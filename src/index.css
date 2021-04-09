@@ -9,6 +9,8 @@ body {
   font-family: "Arial";
   width: 100%;
 }
+
+/*******************************LOGIN***********************************/
 .login {
   width: 50%;
   margin: auto;
@@ -28,7 +30,7 @@ label {
   font-size: 17px;
 }
 
-form {
+.login form {
   text-align: center;
 }
 .log_btn {
@@ -50,25 +52,34 @@ form {
   color: rgb(16, 112, 156);
   font-weight: bold;
 }
-
+/*********************************List*******************************************/
 .questions-list {
   width: 70%;
   text-align: center;
-  background-color: teal;
-  margin: auto;
+  background-color: #7dc2dd;
+  padding: 5px;
+  margin: 10px auto;
 }
 
 .question {
   position: relative;
   height: 200px;
-  width: 400px;
+  width: 50%;
   border: 1px transparent;
   border-radius: 10px;
-  background-color: #7dc2dd;
+  background-color: #36728a;
   text-align: left;
   margin: 10px auto;
 }
+a {
+  color: #ffffff !important;
+  text-decoration: none;
+}
+.questions-list nav a {
+  color: #36728a !important;
+}
 
+/***************************************Question**************************************************/
 .avatar {
   padding: 5px;
   display: inline-block;
@@ -83,10 +94,17 @@ form {
 .ques-info {
   display: inline-block;
   padding: 10px;
+  margin-left: 10px;
   position: absolute;
   left: 100px;
+  width: 100%;
 }
-
+/************************************Nav*********************************************/
+.nav {
+  width: 100%;
+  background-color: #7dc2dd;
+  justify-content: space-between;
+}
 .nav ul {
   display: flex;
   flex-direction: row;
@@ -95,15 +113,119 @@ form {
 }
 
 .nav li:first-child {
-  padding-left: 0;
+  padding-left: 10px;
 }
 
-ul {
-  padding-left: 0;
+.nav ul {
+  padding-bottom: 0px;
 }
 
-li {
+.nav ul li {
   list-style-type: none;
   padding: 10px;
   text-decoration: none;
+  border: transparent;
+}
+.nav li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav li a:hover {
+  color: #e2dcdc;
+  text-decoration: none;
+}
+.authed-user-info {
+  padding: 8px;
+}
+.authed-user-info img {
+  height: 25px;
+  width: 25px;
+}
+.authed-user-info span {
+  padding: 11px;
+  color: #36728a;
+}
+/****************************************************Question-Details*******************/
+
+li {
+  display: block;
+  border: solid 1px #ddd;
+  padding: 14px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+li .perc-bar {
+  background: #d2dfe5;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  z-index: -1;
+}
+
+.perc-number {
+  float: right;
+}
+
+.ques-details label {
+  vertical-align: middle;
+  cursor: pointer;
+  overflow: hidden;
+  color: #000000;
+}
+
+.ques-details .answeredLabel:before {
+  content: url("http://img.qa01.medscapestatic.com/pi/videoplayer/icons/qna-radio-off.png");
+  overflow: hidden;
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 2px;
+  margin-bottom: -10px;
+}
+
+li.correct .answeredLabel:before {
+  content: url("http://img.qa01.medscapestatic.com/pi/videoplayer/icons/qna-correct.png");
+  margin-top: 0;
+  margin-left: 0;
+  margin-bottom: -10px;
+  margin-right: 6px;
+}
+/***************************************NewQuestion**************************************/
+
+.new-ques {
+  width: 70%;
+  margin: auto;
+  margin-top: 20px;
+  background: #7dc2dd;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+}
+
+/********************************Leaderboard*******************************************/
+
+.board-card {
+  position: relative;
+  background-color: #7dc2dd;
+  width: 50%;
+  height: 200px;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+
+.board-card span {
+  float: right;
+  height: 20px;
+  background: red;
+  line-height: 0px;
+  padding: 20px;
+  border-radius: 50%;
+}
+
+.board-card .new-width {
+  width: inherit;
 }

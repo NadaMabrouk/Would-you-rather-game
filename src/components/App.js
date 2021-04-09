@@ -7,6 +7,9 @@ import Home from './Home'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router,Route} from 'react-router-dom'
 import QuestionDetails from './QuestionDetails'
+import NewQuestion from './NewQuestion';
+import Leaderboard from './Leaderboard';
+import PrivateRoute from './PrivateRoute'
 
 class App extends Component{
   componentDidMount(){
@@ -19,14 +22,15 @@ class App extends Component{
         <Fragment>
           <LoadingBar />
           <div>
-              {this.props.loading ? null :
               <div>
                 <Route path='/login' component={LogIn}/>
-                <Route path='/' exact component= {Home}/>
-                <Route path='/questions/:id' component={QuestionDetails}/>
+                <PrivateRoute path='/' exact component= {Home} isAuth={this.props.authedUser !== null}/>
+                <PrivateRoute path='/questions/:id' component={QuestionDetails} isAuth={this.props.authedUser !== null}/>
+                <PrivateRoute path='/add' component={NewQuestion} isAuth={this.props.authedUser !== null}/>
+                <PrivateRoute path='/leaderboard' component={Leaderboard} isAuth={this.props.authedUser !== null}/>
               </div>
-              }
-              {/*  */}
+              
+              
           </div>
         </Fragment>
       </Router>
@@ -36,7 +40,7 @@ class App extends Component{
 
 function mapStateToProps({authedUser}){
   return {
-    loading: authedUser === null
+    authedUser
   }
 }
 
