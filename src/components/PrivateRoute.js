@@ -4,7 +4,6 @@ import {connect} from 'react-redux'
 
 
 function PrivateRoute({authedUser, questions , component: Component, ...rest}){
-    console.log("private route" + questions)
     return (
         <Route 
             {...rest}
