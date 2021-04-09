@@ -1,10 +1,12 @@
 import React, { Component,Fragment } from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router'
 import {handleAddQuestionAnswer} from '../actions/questions'
 
 class QuestionDetails extends Component{
     state = {
-        selectedOption : ''
+        selectedOption : '',
+        toHome: false
     }
     onValueChange = (event) => {
         this.setState({
@@ -16,8 +18,16 @@ class QuestionDetails extends Component{
         const {dispatch} = this.props
         dispatch(handleAddQuestionAnswer(this.props.match.params.id,this.state.selectedOption))
     }
+    handleBack = (e) => {
+        e.preventDefault()
+        this.setState({
+            toHome: true
+        })
+    }
     render(){
         const {isAnswered,curQues,authorsOption,optionOneVotes,optionTwoVotes,optionOnePerc,optionTwoPerc,name,avatarURL} = this.props
+        if(this.state.toHome === true)
+        return <Redirect to='/' />
         return (
             <div className="ques-details">
             <div className='question' style={{height: "80%"}}>
@@ -41,6 +51,9 @@ class QuestionDetails extends Component{
                             <span className="perc-number">{optionTwoPerc} %</span>
                         </li>
                         <p>{optionTwoVotes} people voted for this</p>
+                        <button className="btn btn-secondary" onClick={this.handleBack}>
+                            Go to Home
+                        </button>
                     </Fragment>
                 }
                  

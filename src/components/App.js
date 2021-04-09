@@ -21,27 +21,17 @@ class App extends Component{
       <Router>
         <Fragment>
           <LoadingBar />
-          <div>
               <div>
                 <Route path='/login' component={LogIn}/>
-                <PrivateRoute path='/' exact component= {Home} isAuth={this.props.authedUser !== null}/>
-                <PrivateRoute path='/questions/:id' component={QuestionDetails} isAuth={this.props.authedUser !== null}/>
-                <PrivateRoute path='/add' component={NewQuestion} isAuth={this.props.authedUser !== null}/>
-                <PrivateRoute path='/leaderboard' component={Leaderboard} isAuth={this.props.authedUser !== null}/>
+                <PrivateRoute path='/' exact component= {Home} />
+                <PrivateRoute path='/questions/:id' component={QuestionDetails} />
+                <PrivateRoute path='/add' component={NewQuestion}/>
+                <PrivateRoute path='/leaderboard' component={Leaderboard} />
               </div>
-              
-              
-          </div>
         </Fragment>
       </Router>
     )
 }
 }
 
-function mapStateToProps({authedUser}){
-  return {
-    authedUser
-  }
-}
-
-export default connect(mapStateToProps)(App);
+export default connect()(App);

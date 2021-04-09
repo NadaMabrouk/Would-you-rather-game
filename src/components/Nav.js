@@ -32,7 +32,7 @@ class Nav extends Component{
                 <div className='authed-user-info'>
                     <img src={avatarURL} alt='authors-avatar'/>
                     <span>{name}</span>
-                    <button type='submit' onClick={this.handleLogout}>Log out</button>
+                    <button className='btn btn-light' type='button' onClick={this.handleLogout}>Log out</button>
                 </div>
                 </nav>
             

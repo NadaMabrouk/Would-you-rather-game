@@ -6,7 +6,7 @@ import {Redirect} from 'react-router-dom'
 class LogIn extends Component {
     state = {
         user_ID: '',
-        toHome: false
+        redirect: false
     }
     handleChange = (e) => {
         e.preventDefault()
@@ -19,14 +19,15 @@ class LogIn extends Component {
             return alert('Please Select a User to Log In')
         }
         dispatch(setAuthedUser(this.state.user_ID))
-        // Redirect User to the HomePage
-        this.setState({toHome: true})
+        this.setState({
+            redirect: true
+        })
     }
     render() {
-        console.log(this.props.users)
-        console.log(Object.entries(this.props.users))
-        if(this.state.toHome === true)
-        return <Redirect to="/" />
+    const { from } = this.props.location.state || { from: { pathname: '/' } }
+    if (this.state.redirect === true) {
+      return <Redirect to={from} />
+    }
         return (
             <div className="login">
                 <h2>Welcome to the Would you rather Game !</h2>

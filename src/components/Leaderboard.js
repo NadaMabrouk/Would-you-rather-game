@@ -6,7 +6,7 @@ class Leaderboard extends Component{
     render(){
         const {usersList} = this.props
         return(
-            <div className='leaderboard'>
+            <div className='leader-board'>
                 <Nav />
             {
                 usersList.map((user) => (

@@ -58,7 +58,7 @@ label {
   text-align: center;
   background-color: #7dc2dd;
   padding: 5px;
-  margin: 10px auto;
+  margin: auto;
 }
 
 .question {
@@ -206,11 +206,16 @@ li.correct .answeredLabel:before {
 }
 
 /********************************Leaderboard*******************************************/
-
+.leader-board {
+  width: 70%;
+  margin: auto;
+  background-color: #7dc2dd;
+  padding: 5px;
+}
 .board-card {
   position: relative;
-  background-color: #7dc2dd;
-  width: 50%;
+  background-color: #36728a;
+  width: 80%;
   height: 200px;
   padding: 10px;
   margin: 10px auto;
