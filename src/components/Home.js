@@ -12,7 +12,7 @@ class Home extends Component{
         return (
             <div className='questions-list'>
                 <Nav/>
-                <Tabs fill defaultActiveKey="answered" >
+                <Tabs fill defaultActiveKey="unanswered" >
                     <Tab eventKey="answered" title="Answered">
                         <List items = {this.props.answeredQuestions}/>
                     </Tab>

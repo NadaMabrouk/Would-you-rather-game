@@ -2,10 +2,12 @@ import React, {Component} from 'react'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import {logout} from '../actions/authedUser'
+import {withRouter} from 'react-router-dom'
 
 class Nav extends Component{
     handleLogout = () => {
         const {dispatch} = this.props
+        this.props.history.push('/')
         dispatch(logout())
     }
     render(){
@@ -45,4 +47,4 @@ function mapStateToProps({authedUser,users}){
         name: users[authedUser].name
     }
 }
-export default connect(mapStateToProps)(Nav) 
+export default withRouter(connect(mapStateToProps)(Nav))
