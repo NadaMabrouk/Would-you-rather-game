@@ -35,13 +35,13 @@ class QuestionDetails extends Component{
                     <Fragment>
                         <li className={authorsOption === 'optionOne' ? 'correct' : ''}>
                             <span className="perc-bar" style={{width : `${optionOnePerc}%`}}></span>
-                            <label className="answeredLabel" for="option1">{curQues.optionOne.text}</label>
+                            <label className="answeredLabel" htmlFor="option1">{curQues.optionOne.text}</label>
                             <span className="perc-number">{optionOnePerc} %</span>
                         </li>
                         <p>{optionOneVotes} people voted for this</p>
                         <li className={authorsOption === 'optionTwo' ? 'correct' : ''}>
                             <span className="perc-bar" style={{width : `${optionTwoPerc}%`}}></span>
-                            <label className="answeredLabel" for="option2">{curQues.optionTwo.text}</label>
+                            <label className="answeredLabel" htmlFor="option2">{curQues.optionTwo.text}</label>
                             <span className="perc-number">{optionTwoPerc} %</span>
                         </li>
                         <p>{optionTwoVotes} people voted for this</p>

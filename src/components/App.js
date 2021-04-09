@@ -9,6 +9,7 @@ import {BrowserRouter as Router,Route} from 'react-router-dom'
 import QuestionDetails from './QuestionDetails'
 import NewQuestion from './NewQuestion';
 import Leaderboard from './Leaderboard';
+import PageNotFound from './PageNotFound'
 import PrivateRoute from './PrivateRoute'
 
 class App extends Component{
@@ -27,6 +28,7 @@ class App extends Component{
                 <PrivateRoute path='/questions/:id' component={QuestionDetails} />
                 <PrivateRoute path='/add' component={NewQuestion}/>
                 <PrivateRoute path='/leaderboard' component={Leaderboard} />
+                <PrivateRoute path='/404' component={PageNotFound} />
               </div>
         </Fragment>
       </Router>

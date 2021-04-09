@@ -2,16 +2,18 @@ import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
 import {connect} from 'react-redux'
 
-function PrivateRoute({authedUser, component: Component, ...rest}){
+
+function PrivateRoute({authedUser, questions , component: Component, ...rest}){
+    console.log("private route" + questions)
     return (
         <Route 
             {...rest}
             render = {
                 (props) => {
                     if(authedUser !== null){
-                        if(props.match.path === "/questions/:question_id" &&
-                            !Object.keys(this.props.questions).includes(
-                            props.match.params.question_id
+                        if(props.match.path === "/questions/:id" &&
+                            !Object.keys(questions).includes(
+                            props.match.params.id
                             )){ 
                             return <Redirect to="/404" />
                              }else{
@@ -27,9 +29,10 @@ function PrivateRoute({authedUser, component: Component, ...rest}){
 
 }
 
-function mapStateToProps({authedUser}){
+function mapStateToProps({authedUser,questions}){
     return {
-        authedUser
+        authedUser,
+        questions
     }
 }
 export default connect(mapStateToProps)(PrivateRoute)
