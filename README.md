@@ -8,3 +8,7 @@
  And then start the project 
  
  <pre> npm start </pre>
+ 
+ # You can view a live demo for the project here:
+ https://nadamabrouk.github.io/Would-you-rather-game/
+ 
